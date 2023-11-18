@@ -20,6 +20,7 @@
     "eslint": "8.54.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-svelte": "2.35.0",
+    "flowbite": "2.1.1",
     "postcss": "8.4.31",
     "postcss-load-config": "4.0.1",
     "prettier": "3.1.0",
@@ -31,7 +32,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource/roboto": "^5.0.8",
+    "@fontsource/roboto": "5.0.8",
     "chart.js": "4.4.0"
   }
 }

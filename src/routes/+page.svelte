@@ -31,12 +31,11 @@
   <title>Som Energia | Open Data</title>
 </svelte:head>
 
-<h1 class="text-3xl text-[#4d4d4d] py-4">Som Energia</h1>
-<div class="grid grid-cols-2 gap-4">
-  <div class="h-96">
+<div class="lg:grid lg:grid-cols-2 gap-4 mt-4">
+  <div class="max-h-96">
     <canvas bind:this={myChart}></canvas>
   </div>
-  <div class="text-xl text-[#4d4d4d] font-bold self-center text-center">
+  <div class="text-xl text-gray-600 font-bold self-center text-center mt-6 lg:mt-0">
     Actualment som
     <div class="text-7xl text-emerald-600">
       {data.currentMembers.toLocaleString()}
