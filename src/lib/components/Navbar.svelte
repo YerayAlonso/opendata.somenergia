@@ -1,32 +1,19 @@
 <script>
+  import { colorTheme } from '$lib/stores'
+
+  let isDark
   const toggleTheme = () => {
-    const isDark = window.document.documentElement.classList.toggle('dark')
+    isDark = window.document.documentElement.classList.toggle('dark')
     localStorage.setItem('color-theme', isDark ? 'dark' : 'light')
+    $colorTheme = isDark ? 'dark' : 'light'
   }
 </script>
 
-<svelte:head>
-  <script>
-    if ('color-theme' in localStorage) {
-      // explicit preference - overrides author's choice
-      localStorage.getItem('color-theme') === 'dark'
-        ? window.document.documentElement.classList.add('dark')
-        : window.document.documentElement.classList.remove('dark')
-    } else {
-      // browser preference - does not overrides
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-        window.document.documentElement.classList.add('dark')
-    }
-  </script>
-</svelte:head>
-
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
+<nav class="bg-white border-gray-200 dark:bg-gray-800">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="logo_som_energia.svg" class="h-8" alt="SomEnergia Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-        >Open Data</span
-      >
+      <span class="self-center text-2xl font-semibold whitespace-nowrap">Open Data</span>
     </a>
     <button
       on:click={toggleTheme}
